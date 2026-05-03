@@ -10,6 +10,9 @@ export default defineConfig({
   base: '/docs/',
   cleanUrls: true,
 
+  // Lock the site to dark mode and hide the appearance toggle in the nav.
+  appearance: 'force-dark',
+
   // Synced READMEs may reference repo-relative files (./config.lua, ./sql/install.sql)
   // that don't exist in the docs site context. Don't fail the build for those.
   ignoreDeadLinks: [
