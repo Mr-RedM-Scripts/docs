@@ -137,4 +137,4 @@ For build steps and customization (icons, colors, layout), see **[html/README.md
 
 ## License
 
-MIT
+Proprietary / commercial — distribution governed by the [NS-Development Tebex EULA](https://discord.gg/UyyngemnF8). Redistribution, resale, or republishing the source is prohibited.
