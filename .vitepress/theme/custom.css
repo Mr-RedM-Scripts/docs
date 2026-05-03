@@ -3,12 +3,16 @@
  *
  * Targets the page-footer area (Last updated + Previous/Next pager)
  * shown beneath every doc page. The default VitePress styling renders
- * the pager as two flat bordered rectangles which look out of place
- * against the rest of the brand. These overrides:
+ * the pager as two oversized bordered rectangles. These overrides:
  *   - tighten and de-emphasize the "Last updated" line
- *   - soften the divider above the pager
- *   - replace the harsh pager border with a subtle filled card
- *   - introduce a brand-tinted hover lift
+ *   - shrink the pager cards (less padding, smaller text)
+ *   - keep the brand-blue accent (matches the sidebar item hover so
+ *     the whole footer reads as part of the same nav family)
+ *
+ * Note on specificity: VitePress default styles are scoped via
+ * [data-v-1bcd8184], which gives them spec (0,0,2,0). Plain class
+ * selectors like .VPDocFooter only have (0,0,1,0) and lose, hence the
+ * doubled selectors below (.VPDoc .VPDocFooter etc).
  * ============================================================ */
 
 /* ---- Last updated ---- */
@@ -19,33 +23,24 @@
   opacity: 0.85;
 }
 
-/* ---- Divider above the pager ---- */
-.VPDocFooter {
-  margin-top: 32px;
-  padding-top: 24px;
+/* ---- Pager wrapper: tighten the gap above and below the divider ---- */
+.VPDoc .VPDocFooter {
+  margin-top: 28px;
+  padding-top: 18px;
   border-top: 1px solid var(--vp-c-divider);
 }
 
-/* ---- Previous / Next pager cards ---- *
- * Sized down from the VitePress default and recolored away from the
- * stock indigo so the hover state matches the warm RDR2-leaning brand
- * (theme-color #7c2d12). Pager title also defaults to the warm tone
- * instead of the brand-blue so links read as on-brand at rest.
- */
-
-/* warm-amber accent used by the pager hover and title links */
-:root {
-  --ns-pager-accent: #d97706;       /* amber-600 — border on hover */
-  --ns-pager-accent-2: #f59e0b;     /* amber-500 — title default     */
-  --ns-pager-accent-3: #fbbf24;     /* amber-400 — title on hover    */
-  --ns-pager-glow: rgba(217, 119, 6, 0.45);
-}
-
-.VPDocFooter .pager .pager-link {
+/* ---- Previous / Next pager cards ----
+ * Compact size, brand-blue title (same tone as hovered sidebar items),
+ * brand-blue border + soft glow on hover. */
+.VPDoc .VPDocFooter .pager .pager-link {
+  display: block;
   border: 1px solid transparent;
   background-color: var(--vp-c-bg-soft);
   border-radius: 10px;
-  padding: 10px 14px;
+  padding: 8px 12px;
+  min-height: 0;
+  height: auto;
   transition:
     background-color 0.2s ease,
     border-color 0.2s ease,
@@ -53,29 +48,31 @@
     box-shadow 0.2s ease;
 }
 
-.VPDocFooter .pager .pager-link:hover {
+.VPDoc .VPDocFooter .pager .pager-link:hover {
   background-color: var(--vp-c-bg-elv);
-  border-color: var(--ns-pager-accent);
+  border-color: var(--vp-c-brand-1);
   transform: translateY(-1px);
-  box-shadow: 0 6px 18px -10px var(--ns-pager-glow);
+  box-shadow: 0 4px 14px -8px var(--vp-c-brand-1);
 }
 
-.VPDocFooter .pager .pager-link .desc {
+.VPDoc .VPDocFooter .pager .pager-link .desc {
   font-size: 10px;
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--vp-c-text-3);
-  margin-bottom: 4px;
+  margin-bottom: 2px;
+  line-height: 1.4;
 }
 
-.VPDocFooter .pager .pager-link .title {
-  font-size: 14px;
+.VPDoc .VPDocFooter .pager .pager-link .title {
+  font-size: 13px;
   font-weight: 600;
-  color: var(--ns-pager-accent-2);
+  color: var(--vp-c-brand-1);
+  line-height: 1.4;
   transition: color 0.2s ease;
 }
 
-.VPDocFooter .pager .pager-link:hover .title {
-  color: var(--ns-pager-accent-3);
+.VPDoc .VPDocFooter .pager .pager-link:hover .title {
+  color: var(--vp-c-brand-2);
 }
