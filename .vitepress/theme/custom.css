@@ -38,7 +38,7 @@
   border: 1px solid transparent;
   background-color: var(--vp-c-bg-soft);
   border-radius: 10px;
-  padding: 8px 12px;
+  padding: 6px 16px;            /* flatter + slightly wider feel than 8px 12px */
   min-height: 0;
   height: auto;
   transition:
@@ -50,9 +50,11 @@
 
 .VPDoc .VPDocFooter .pager .pager-link:hover {
   background-color: var(--vp-c-bg-elv);
-  border-color: var(--vp-c-brand-1);
+  /* Neutral warm-slate border — keeps the title's brand-blue text as the
+     focal point without the border competing with it. */
+  border-color: #9ca3af;
   transform: translateY(-1px);
-  box-shadow: 0 4px 14px -8px var(--vp-c-brand-1);
+  box-shadow: 0 4px 14px -8px rgba(156, 163, 175, 0.55);
 }
 
 .VPDoc .VPDocFooter .pager .pager-link .desc {
