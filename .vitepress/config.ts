@@ -75,17 +75,17 @@ export default defineConfig({
 
     sidebar: [
       {
-        text: '🧱 Core',
+        text: '⚙️ Core',
         collapsed: false,
         items: [
-          { text: '🧩 ns-lib', link: '/scripts/ns-lib' },
+          { text: '🔗 ns-lib', link: '/scripts/ns-lib' },
         ],
       },
       {
         text: '📦 Resources',
         collapsed: false,
         items: [
-          { text: '🎒 ns-kits', link: '/scripts/ns-kits' },
+          { text: '🎁 ns-kits', link: '/scripts/ns-kits' },
           { text: '🎬 ns-loadingscreen', link: '/scripts/ns-loadingscreen' },
           { text: '🍇 ns-vineyard', link: '/scripts/ns-vineyard' },
         ],
