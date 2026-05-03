@@ -15,6 +15,11 @@
  * doubled selectors below (.VPDoc .VPDocFooter etc).
  * ============================================================ */
 
+/* ---- Nav logo size ---- */
+:root {
+  --vp-nav-logo-height: 40px;
+}
+
 /* ---- Last updated ---- */
 .VPDocFooterLastUpdated {
   font-size: 12px;
