@@ -137,4 +137,4 @@ For build steps and customization (icons, colors, layout), see **[html/README.md
 
 ## License
 
-Proprietary / commercial — distribution governed by the [Native Scripts Tebex EULA](https://discord.gg/UyyngemnF8). Redistribution, resale, or republishing the source is prohibited.
+Proprietary / commercial — distribution governed by the [Native Scripts EULA](https://discord.gg/UyyngemnF8). Redistribution, resale, or republishing the source is prohibited.
