@@ -1,6 +1,6 @@
 # ns-teleport
 
-Cross-framework RedM teleport menu via [ns-lib](https://github.com/NativeScriptsDev/ns-lib).
+Cross-framework RedM teleport menu via [ns-lib](https://nativescriptsdev.github.io/docs/scripts/ns-lib).
 Players walk up to a stagecoach NPC, press `G`, pick a destination, optionally
 pay a fee, and travel with a cinematic fade.
 
@@ -24,17 +24,15 @@ red, sharp shapes, Newsreader headlines.
 
 ## Installation
 
-1. Clone into your `[ns-development]` folder:
-   ```
-   git clone https://github.com/NativeScriptsDev/ns-teleport.git resources/[ns-development]/ns-teleport
-   ```
-2. Add to `server.cfg` after `ns-lib`:
+1. Make sure `ns-lib` is installed and `ensure`d.
+2. Drop this folder into `resources/ns-teleport/`.
+3. Add to `server.cfg` after `ns-lib`:
    ```
    ensure ns-lib
    ensure ns-teleport
    ```
-3. Edit `config.lua` — edit `Hubs`, tune `Cost`.
-4. (Optional) Drop your Newsreader & Noto Serif `.woff2` files into `html/fonts/`.
+4. Edit `config.lua` — edit `Hubs`, tune `Cost`.
+5. (Optional) Drop your Newsreader & Noto Serif `.woff2` files into `html/fonts/`.
    Without them the menu falls back to Georgia gracefully.
 
 ## Hubs
