@@ -17,6 +17,16 @@ Cross-framework RedM vendor shops via [ns-lib](https://nativescriptsdev.github.i
    ```
 3. Restart the server. 9 default shops (3 general stores, 3 gunsmiths, 3 saloons) will spawn around the map.
 
+### Rebuilding the UI (optional)
+
+A prebuilt UI ships under `html/` — a fresh install runs as-is. Only rebuild if you edit the React source under `ui/`:
+
+```
+cd ui
+npm install
+npm run build   # writes to ../html
+```
+
 ## Configuration
 
 All settings live in `config.lua`:
